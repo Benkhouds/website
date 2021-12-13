@@ -4,6 +4,8 @@ import AuthService from '../services/auth';
 
 const UserContext = createContext();
 
+//still needs to be cleaned (canceling the request on unmount)
+
 export function UserContextWrapper({ children }) {
    const [userData, setUserData] = useState(null);
    const [isLoading, setIsLoading] = useState(true);
