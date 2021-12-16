@@ -29,8 +29,8 @@ function Register() {
          );
          setTimeout(() => {
             setUser(data.user);
-            navigate('/');
             setSubmitting(false);
+            navigate('/');
          }, 500);
       } catch (err) {
          toast.update(

@@ -18,15 +18,17 @@ export function UserContextWrapper({ children }) {
          } = await AuthService.getUserData();
          if (user && user.accessToken) {
             const expires_in = jwtDecode(user.accessToken).exp;
+            //refetching a new token before one second of the token's expiration )
             setTimeout(() => {
                console.log(Date.now > expires_in * 1000);
                refreshToken();
             }, (expires_in - 1) * 1000 - Date.now());
+
             setUserData(user);
+            setIsLoading(false);
          }
       } catch (err) {
          setError(err.response?.data?.error || 'internal server error');
-      } finally {
          setIsLoading(false);
       }
    }, []);

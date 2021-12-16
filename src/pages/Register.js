@@ -29,13 +29,13 @@ function Register() {
             toastOptions('All is good', 'success', false)
          );
          setSubmitting(false);
-         setUser(() => data.user);
+         setUser(data.user);
          navigate('/');
       } catch (err) {
          toast.update(
             requestStatus,
             toastOptions(
-               err.response?.data?.error || 'Error has occured',
+               err.response?.data?.error || 'Error has occurred',
                'error',
                false
             )
