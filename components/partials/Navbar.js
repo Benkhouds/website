@@ -7,17 +7,23 @@ function Navbar() {
       <NavbarLayout>
          <div className="links">
             <Logo size="sm" />
-            <div>
-               <Link href="/">
-                  <a>Home</a>
-               </Link>
-               <Link href="/about">
-                  <a>About us</a>
-               </Link>
-               <Link href="/contact">
-                  <a>Contact us</a>
-               </Link>
-            </div>
+            <ul>
+               <li>
+                  <Link href="/">
+                     <a>Home</a>
+                  </Link>
+               </li>
+               <li>
+                  <Link href="/about">
+                     <a>About us</a>
+                  </Link>
+               </li>
+               <li>
+                  <Link href="/contact">
+                     <a>Contact us</a>
+                  </Link>
+               </li>
+            </ul>
          </div>
          <button>AR</button>
       </NavbarLayout>
@@ -38,7 +44,7 @@ const NavbarLayout = styled.nav`
       display: flex;
       align-items: center;
       justify-content: space-between;
-      div:nth-child(2) {
+      ul {
          display: flex;
          margin-left: 3rem;
          a {
@@ -51,8 +57,10 @@ const NavbarLayout = styled.nav`
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
+      border: solid 1px white;
       background: white;
       color: black;
       font-weight: bold;
+      cursor: pointer;
    }
 `;
